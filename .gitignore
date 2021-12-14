@@ -6,3 +6,7 @@ target/
 **/*.rs.bk
 
 .idea/
+
+# Added by cargo
+
+/target

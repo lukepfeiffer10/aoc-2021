@@ -1,22 +1,4 @@
-use std::env::args;
-use std::fs;
-
-fn main() {
-    let arguments = args();
-    if arguments.len() == 1 {
-        panic!("Must supply a file as input!")
-    }
-
-    let filename = arguments
-        .skip(1)
-        .next()
-        .unwrap();
-    let input = fs::read_to_string(filename)
-        .unwrap();
-    let input = input
-        .lines()
-        .map(|value| value.parse::<i64>().unwrap())
-        .collect::<Vec<_>>();
+pub fn solve(input: Vec<i64>) -> i64 {
     let mut increases = 0;
     let mut first_window_start = 0;
     let mut first_window_end = 2;
@@ -36,5 +18,5 @@ fn main() {
         second_window_end += 1;
      }
 
-    println!("The number of increases is: {}", increases)
+    increases
 }
