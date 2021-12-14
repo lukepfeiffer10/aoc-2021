@@ -14,8 +14,7 @@ fn main() {
     let input = fs::read_to_string(filename)
         .unwrap();
     let input = input
-        .split("\n")
-        .filter(|value| !value.is_empty())
+        .lines()
         .map(|value| value.parse::<i64>().unwrap());
     let mut increases = 0;
     let mut current = 0;
