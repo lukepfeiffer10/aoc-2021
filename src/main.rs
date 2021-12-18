@@ -1,8 +1,12 @@
-mod day_1;
-mod day_2;
+//mod day_1;
+//mod day_2;
+
+mod day_3;
 
 use std::env::args;
 use std::fs;
+use crate::day_3::challenge_2::solve;
+use crate::day_3::parse;
 
 fn main() {
     let arguments = args();
@@ -16,8 +20,8 @@ fn main() {
         .unwrap();
     let input = fs::read_to_string(filename)
         .unwrap();
-    let input = day_2::parse(input.lines());
+    let input = parse(input.lines());
         
     
-    println!("Answer: {}", day_2::challenge_2::solve(input))
+    println!("Answer: {}", solve(input))
 }
